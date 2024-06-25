@@ -1,0 +1,183 @@
+.container {
+  position: absolute;
+  z-index: 9;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+  .wrapperReveal {
+    width: 80%;
+    height: 100%;
+    max-height: 75vh;
+    max-height: 75dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 2rem;
+    row-gap: 4vmin;
+
+    @media (max-aspect-ratio: 16/9) {
+      flex-direction: column;
+      max-height: 85vh;
+      max-height: 85dvh;
+      width: 70%;
+    }
+
+    .group {
+      &.left {
+        align-self: flex-start;
+
+        @media (max-aspect-ratio: 16/9) {
+          align-self: center;
+        }
+      }
+
+      &.right {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        row-gap: 0.75rem;
+
+        @media (max-aspect-ratio: 16/9) {
+          order: -1;
+        }
+
+        h2 {
+          font-family: 'Venice Nights';
+          font-weight: 700;
+          font-size: 12vmin;
+          font-size: 12dvmin;
+          font-style: italic;
+          color: var(--color-light-blue);
+          text-transform: uppercase;
+
+          > * {
+            display: inline-block;
+
+            &:not(:last-child) {
+              margin-right: 0.5ch;
+            }
+          }
+
+          .starContainer {
+            position: relative;
+
+            .stars {
+              position: absolute;
+              left: calc(100% + 4px);
+              bottom: calc(100% - 12px);
+
+              svg {
+                position: absolute;
+                display: block;
+
+                &:nth-child(1) {
+                  left: 0;
+                  bottom: 0;
+                  width: 13px;
+                  height: 19px;
+                }
+
+                &:nth-child(2) {
+                  left: 14px;
+                  bottom: 10px;
+                  width: 7px;
+                  height: 10px;
+                }
+              }
+            }
+          }
+        }
+
+        .contentWrapper {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: center;
+          row-gap: 1.5vmin;
+          max-width: 90%;
+
+          @media (max-aspect-ratio: 16/9) {
+            max-width: 100%;
+          }
+
+          p {
+            line-height: 1.35;
+            color: var(--color-light-purple);
+            font-size: clamp(0.75rem, 4vmin, 1rem);
+            font-size: clamp(0.75rem, 4dvmin, 1rem);
+
+            i {
+              color: var(--color-light-blue);
+              font-style: italic;
+              font-weight: 700;
+            }
+
+            &:last-of-type {
+              margin-bottom: 1rem;
+            }
+          }
+        }
+      }
+    }
+
+    .cardContainer {
+      position: relative;
+      transform-origin: center;
+      transform: translateY(-5vh) rotate(-5deg);
+      box-shadow: 0px 0px 50px 0px rgba(130, 81, 230, 0.7);
+
+      @media (max-aspect-ratio: 16/9) {
+        transform: translateY(5vh) rotate(-5deg);
+      }
+
+      .nickname {
+        position: absolute;
+        z-index: 2;
+        top: 18%;
+        left: 50%;
+        transform: translateX(-50%);
+        font-family: 'Venice Nights';
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 10vmin;
+        font-size: 10vmin;
+        letter-spacing: 0.06em;
+        color: var(--color-light-blue);
+      }
+
+      .video {
+        position: absolute;
+        z-index: 1;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+        height: 80%;
+        width: auto;
+      }
+
+      .card {
+        display: block;
+        position: relative;
+        z-index: 0;
+        height: 105vh;
+        height: 105dvh;
+        width: auto;
+
+        @media (max-aspect-ratio: 16/9) {
+          height: 40vh;
+          height: 40dvh;
+        }
+      }
+    }
+  }
+}

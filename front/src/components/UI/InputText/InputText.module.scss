@@ -1,0 +1,60 @@
+.container {
+  position: relative;
+  width: 100%;
+
+  .input {
+    width: 100%;
+    min-width: 0;
+    border-radius: 9999px;
+    color: var(--color-purple);
+    font-size: 4.5vmin;
+    font-size: 4.5dvmin;
+    padding: 0.45em 1.5em;
+    font-style: italic;
+    letter-spacing: 0.1em;
+    border: none;
+    background: linear-gradient(90deg, #33037f 49.58%, #210354 99.58%);
+    text-align: center;
+    outline: 0.35vmin solid rgba(160, 130, 221, 0);
+    outline: 0.35dvmin solid rgba(160, 130, 221, 0);
+    transition: outline 0.2s cubic-bezier(0.4, 0, 0, 1);
+
+    &::placeholder {
+      color: var(--color-purple);
+      opacity: 0.4;
+    }
+
+    &:focus {
+      outline: 0.35vmin solid var(--color-dark-purple);
+      outline: 0.35dvmin solid var(--color-dark-purple);
+    }
+  }
+
+  .lightLine {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    height: 0.15vmin;
+    height: 0.15dvmin;
+    width: 85%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(
+      90deg,
+      rgba(94, 8, 207, 0) 0%,
+      #a082dd 50%,
+      rgba(94, 8, 207, 0) 100%
+    );
+    opacity: 0.5;
+
+    &.first {
+      top: 0.3vmin;
+      top: 0.3dvmin;
+    }
+
+    &.second {
+      bottom: 0.3vmin;
+      bottom: 0.3dvmin;
+    }
+  }
+}

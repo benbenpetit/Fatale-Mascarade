@@ -1,0 +1,106 @@
+.container {
+  width: 75%;
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 6vmin;
+
+  .wrapperCard {
+    position: relative;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    transform: rotate(-3deg);
+    animation: slideIn 0.65s cubic-bezier(0.4, 0, 0, 1) forwards;
+
+    // &::before {
+    //   content: '';
+    //   position: absolute;
+    //   z-index: -1;
+    //   left: 0;
+    //   top: 0;
+    //   right: 0;
+    //   bottom: 0;
+    //   background-color: var(--color-light-purple);
+    //   filter: blur(10vmin);
+    //   opacity: 0.5;
+    // }
+
+    .title {
+      position: absolute;
+      z-index: 2;
+      display: inline-block;
+      top: 20%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80%;
+      font-size: 6.5min;
+      font-size: 6.5dvmin;
+      font-family: 'Venice Nights';
+      font-weight: 700;
+      font-style: italic;
+      text-transform: uppercase;
+      letter-spacing: 0.025em;
+      line-height: 0.9;
+      color: var(--color-light-purple);
+      text-align: center;
+
+      span {
+        display: inline-block;
+        position: relative;
+        z-index: 1;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        z-index: 0;
+        left: -10%;
+        top: 0;
+        right: -10%;
+        bottom: 0;
+        background-color: var(--color-light-purple);
+        border-radius: 50%;
+        filter: blur(4vmin);
+        opacity: 0.5;
+      }
+    }
+
+    .img {
+      position: absolute;
+      z-index: 1;
+      left: 50%;
+      top: 60%;
+      transform: translate(-50%, -50%);
+      height: 50%;
+      width: 75%;
+      object-fit: contain;
+      display: block;
+      filter: drop-shadow(0px 1px 3px rgba(235, 221, 248, 0.5))
+        drop-shadow(0px 4px 3px rgba(0, 0, 0, 0.15));
+    }
+
+    .bg {
+      height: 100%;
+      max-width: 100%;
+      aspect-ratio: 176 / 249;
+      display: block;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translate(-10%, 10%) rotate(3deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translate(0, 0) rotate(-3deg);
+  }
+}

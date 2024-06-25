@@ -1,0 +1,19 @@
+@import 'fonts';
+@import 'reset';
+
+:root {
+  --color-purple: #a082dd;
+  --color-light-purple: #c0a9ed;
+  --color-dark-purple: #5e08cf;
+  --color-light-blue: #a7c5db;
+  --color-dark-blue: #13032c;
+}
+
+html {
+  font-family: 'Mulish', sans-serif;
+}
+
+body {
+  margin: 0;
+  color: white;
+}

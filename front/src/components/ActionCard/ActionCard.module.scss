@@ -1,0 +1,259 @@
+.container {
+  width: 75%;
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 6vmin;
+
+  .wrapperCard {
+    position: relative;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    transform: rotate(-3deg);
+    // animation: slideIn 0.65s cubic-bezier(0.4, 0, 0, 1) forwards;
+
+    &::before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background-color: var(--color-light-purple);
+      filter: blur(10vmin);
+      opacity: 0.5;
+    }
+
+    .title {
+      position: absolute;
+      z-index: 2;
+      display: inline-block;
+      top: 20%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80%;
+      font-size: 6.5min;
+      font-size: 6.5dvmin;
+      font-family: 'Venice Nights';
+      font-weight: 700;
+      font-style: italic;
+      text-transform: uppercase;
+      letter-spacing: 0.025em;
+      line-height: 0.9;
+      color: var(--color-light-purple);
+      text-align: center;
+
+      span {
+        display: inline-block;
+        position: relative;
+        z-index: 1;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        z-index: 0;
+        left: -10%;
+        top: 0;
+        right: -10%;
+        bottom: 0;
+        background-color: var(--color-light-purple);
+        border-radius: 50%;
+        filter: blur(4vmin);
+        opacity: 0.5;
+      }
+    }
+
+    .img {
+      position: absolute;
+      z-index: 1;
+      left: 50%;
+      top: 60%;
+      transform: translate(-50%, -50%);
+      height: 50%;
+      width: 75%;
+      object-fit: contain;
+      display: block;
+      filter: drop-shadow(0px 1px 3px rgba(235, 221, 248, 0.5))
+        drop-shadow(0px 4px 3px rgba(0, 0, 0, 0.15));
+    }
+
+    .bg {
+      height: 100%;
+      max-width: 100%;
+      aspect-ratio: 176 / 249;
+      display: block;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+  }
+
+  .wrapperList {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    padding-top: 6vh;
+    padding-top: 6dvh;
+    padding-bottom: 6vh;
+    padding-bottom: 6dvh;
+
+    h3 {
+      position: relative;
+      display: inline-block;
+      font-size: 9vmin;
+      font-size: 9dvmin;
+      font-family: 'Venice Nights';
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.025em;
+      line-height: 0.75;
+      color: var(--color-light-purple);
+      text-align: center;
+      margin-bottom: 3vmin;
+
+      span {
+        display: inline-block;
+        position: relative;
+        z-index: 1;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        z-index: 0;
+        left: -10%;
+        top: 0;
+        right: -10%;
+        bottom: 0;
+        background-color: var(--color-light-purple);
+        border-radius: 50%;
+        filter: blur(14vmin);
+        opacity: 0.6;
+      }
+    }
+
+    .noItem {
+      display: block;
+      text-align: center;
+      margin-top: 8vmin;
+      font-size: 4vmin;
+      font-style: italic;
+      letter-spacing: 0.01em;
+      color: var(--color-purple);
+      max-width: 90%;
+    }
+
+    .scroller {
+      height: 100%;
+      overflow-y: scroll;
+      mask-image: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.2) 0%,
+        rgba(0, 0, 0, 1) 20%,
+        rgba(0, 0, 0, 1) 100%
+      );
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        row-gap: 2vmin;
+        row-gap: 2dvmin;
+        padding-bottom: 7vmin;
+
+        li {
+          opacity: 0;
+          animation: opacityIn 0.65s cubic-bezier(0.4, 0, 0, 1) forwards;
+
+          &:nth-child(2) {
+            animation-delay: 0.1s;
+          }
+
+          &:nth-child(3) {
+            animation-delay: 0.2s;
+          }
+        }
+
+        .item {
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          text-align: left;
+          padding: 3vmin;
+          border-radius: 1.5vmin;
+          background-color: rgba(160, 130, 221, 0.15);
+          cursor: pointer;
+
+          &:active {
+            background-color: rgba(160, 130, 221, 0.2);
+          }
+
+          &.isNew {
+            .star {
+              position: absolute;
+              left: 0;
+              top: 0;
+              width: 5.5vmin;
+              height: 5.5vmin;
+              border-radius: 9999px;
+              background-color: #1f045a;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              padding: 0.25vmin;
+              background-color: var(--color-dark-purple);
+
+              svg {
+                height: 100%;
+                width: auto;
+                filter: drop-shadow(0px 0px 0.5vmin var(--color-light-purple));
+              }
+            }
+          }
+
+          h4 {
+            color: var(--color-light-blue);
+            font-size: clamp(0.45rem, 3.5vmin, 2rem);
+            font-style: italic;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            display: inline-block;
+          }
+
+          p {
+            color: var(--color-light-purple);
+            font-size: clamp(0.5rem, 4vmin, 1.5rem);
+            line-height: 1.25;
+            margin-top: 0.375em;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translate(-10%, 10%) rotate(3deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translate(0, 0) rotate(-3deg);
+  }
+}
+
+@keyframes opacityIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

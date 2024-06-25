@@ -1,0 +1,263 @@
+.container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+  .wrapper {
+    width: 82%;
+    height: 100%;
+    max-height: 72vh;
+    max-height: 72dvh;
+    display: flex;
+    justify-content: space-between;
+    column-gap: 3vw;
+
+    .group {
+      &.left {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .areas {
+          aspect-ratio: 459 / 266;
+          display: grid;
+          gap: 2.5vh;
+          gap: 2.5dvh;
+          grid-template-columns: repeat(32, 1fr);
+          grid-template-rows: 7fr 6fr 7fr;
+          --door-width: calc(
+            75vh * 1.72556390977 * 1 / 32 + 2.5vh / 3 + 0.75vmin
+          );
+          --door-width: calc(
+            75dvh * 1.72556390977 * 1 / 32 + 2.5dvh / 3 + 0.75vmin
+          );
+          --door-height: 2.75vh;
+          --door-height: 2.75dvh;
+
+          .area {
+            position: relative;
+            background-color: rgba(192, 169, 237, 0.1);
+            border: 0.5vmin solid var(--color-purple);
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            row-gap: 2vh;
+
+            &:hover {
+              background-color: rgba(192, 169, 237, 0.15);
+            }
+
+            &.isCurrent {
+              background-color: rgba(255, 0, 0, 0.1);
+
+              &:hover {
+                background-color: rgba(255, 0, 0, 0.15);
+              }
+            }
+
+            &.area-bedroom-nicolas {
+              grid-column: span 12;
+
+              .door {
+                left: 80%;
+                top: calc(100% + 0.5vmin);
+                transform: translateX(-50%);
+              }
+            }
+
+            &.area-desk-nicolas {
+              grid-column: span 9;
+
+              .door {
+                left: 50%;
+                top: calc(100% + 0.5vmin);
+                transform: translateX(-50%);
+              }
+            }
+
+            &.area-kitchen {
+              grid-column: span 11;
+
+              .door {
+                left: 80%;
+                top: calc(100% + 0.5vmin);
+                transform: translateX(-50%);
+              }
+            }
+
+            &.area-bathroom {
+              grid-column: span 6;
+
+              .door {
+                left: calc(100% + 0.1vmin);
+                top: 50%;
+                transform-origin: center;
+                transform: rotate(90deg) translateY(50%);
+              }
+            }
+
+            &.area-livingroom {
+              grid-column: span 26;
+              background-color: rgba(0, 0, 0, 0.25);
+
+              &:hover {
+                background-color: rgba(0, 0, 0, 0.3);
+              }
+
+              .door {
+                right: calc(0px);
+                top: 50%;
+                transform-origin: center;
+                transform: translateY(-50%) rotate(90deg) translateY(-50%);
+                opacity: 0.25;
+              }
+            }
+
+            &.area-bedroom-marcus {
+              grid-column: span 8;
+            }
+
+            &.area-bedroom-sophie {
+              grid-column: span 8;
+
+              .door {
+                left: 50%;
+                bottom: calc(100% + 0.5vmin);
+                transform: translateX(-50%);
+              }
+            }
+
+            &.area-bedroom-ludivine {
+              grid-column: span 8;
+
+              .door {
+                left: 50%;
+                bottom: calc(100% + 0.5vmin);
+                transform: translateX(-50%);
+              }
+            }
+
+            &.area-bedroom-paul {
+              grid-column: span 8;
+
+              .door {
+                left: 50%;
+                bottom: calc(100% + 0.5vmin);
+                transform: translateX(-50%);
+              }
+            }
+
+            .door {
+              display: block;
+              position: absolute;
+              bottom: calc(100% + 0.5vmin);
+              right: -0.5vmin;
+              width: var(--door-width);
+              height: var(--door-height);
+              background-color: var(--color-purple);
+              opacity: 0.9;
+            }
+
+            .deadEmoji {
+              position: absolute;
+              top: 0;
+              left: 50%;
+              width: 8vmin;
+              width: 8dvmin;
+              height: 8vmin;
+              height: 8dvmin;
+              transform: translate(-50%, -50%);
+              border-radius: 9999px;
+              background-color: var(--color-light-purple);
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              padding: 1.5vmin;
+              padding: 1.5dvmin;
+
+              img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                filter: drop-shadow(0px 0px 4px var(--color-dark-purple));
+              }
+            }
+
+            .title {
+              text-align: center;
+              line-height: 1.1;
+              font-size: 3.25vmin;
+              max-width: 90%;
+              color: var(--color-light-purple);
+            }
+
+            .roomPlayers {
+              position: relative;
+              height: 7vh;
+              height: 7dvh;
+              display: flex;
+              justify-content: flex-end;
+              align-items: flex-end;
+
+              .avatar {
+                position: relative;
+                width: 7vmin;
+                width: 7dvmin;
+                height: 7vmin;
+                height: 7dvmin;
+                border-radius: 9999px;
+                filter: drop-shadow(0px 0px 10px rgba(160, 130, 221, 0.5));
+                animation: slideIn 0.25s cubic-bezier(0.4, 0, 0, 1) forwards;
+
+                &:not(:first-child) {
+                  margin-left: -2vmin;
+                  margin-left: -2dvmin;
+                }
+
+                @for $i from 1 through 5 {
+                  &:nth-child(#{$i}) {
+                    z-index: #{5 - $i};
+                  }
+                }
+
+                img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  border-radius: 9999px;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      &.right {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: space-between;
+      }
+    }
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

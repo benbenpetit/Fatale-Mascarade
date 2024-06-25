@@ -1,0 +1,41 @@
+.container {
+  position: relative;
+  width: 100%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  display: flex;
+  align-items: center;
+
+  .point {
+    display: block;
+    margin: 4px;
+    width: 4px;
+    height: 4px;
+    border-radius: 9999px;
+    background-color: var(--color-purple);
+  }
+
+  .line {
+    display: block;
+    height: 1px;
+    flex: 1;
+    background-color: var(--color-purple);
+  }
+
+  .squares {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    transform-origin: center;
+    transform: rotate(45deg);
+    gap: 0.5vmin;
+    gap: 0.5dvmin;
+
+    .square {
+      width: 0.875vmin;
+      width: 0.875dvmin;
+      height: 0.875vmin;
+      height: 0.875dvmin;
+      background-color: var(--color-purple);
+    }
+  }
+}

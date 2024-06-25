@@ -1,0 +1,141 @@
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+  .logo {
+    position: relative;
+    z-index: 1;
+
+    img {
+      display: block;
+    }
+
+    .realLogo {
+      position: relative;
+      z-index: 4;
+      object-fit: contain;
+      opacity: 0.65;
+      height: 50vmin;
+      height: 50dvmin;
+      aspect-ratio: 307 / 174;
+
+      @media (min-aspect-ratio: 307/174) {
+        height: 38vmin;
+        height: 38dvmin;
+      }
+
+      @media (max-aspect-ratio: 307/174) {
+        height: 30vw;
+      }
+    }
+
+    .logoBackdrop {
+      position: absolute;
+      z-index: 3;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      filter: blur(15px);
+    }
+
+    .logoEllipse {
+      position: absolute;
+      z-index: 2;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0.15;
+      width: 120%;
+      height: auto;
+      object-fit: contain;
+      filter: blur(200px);
+    }
+
+    .logoCircle {
+      position: absolute;
+      z-index: 1;
+      left: 50%;
+      bottom: 0;
+      transform-origin: center;
+      opacity: 0.6;
+      width: 110%;
+      filter: brightness(0) saturate(100%) invert(14%) sepia(23%)
+        saturate(7232%) hue-rotate(223deg) brightness(98%) contrast(106%);
+      transform: translate(-50%, -20%) rotate(12deg);
+    }
+
+    .subtitle {
+      position: absolute;
+      z-index: 5;
+      top: calc(100% + 1rem);
+      left: 50%;
+      transform: translateX(-50%);
+      width: 75vw;
+      text-align: center;
+      font-size: clamp(12px, 2vmin, 16px);
+      font-size: clamp(12px, 2dvmin, 16px);
+      font-style: italic;
+      letter-spacing: 0.01em;
+      color: var(--color-purple);
+      animation: blink 1.5s infinite linear;
+    }
+  }
+
+  .ghost {
+    position: absolute;
+    z-index: 0;
+    bottom: 0;
+    left: 52%;
+    transform: translate(0, 10%);
+    width: auto;
+    height: clamp(80vh, 150vw, 90vh);
+
+    img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      height: 100%;
+      width: auto;
+      transform: translateX(-50%);
+      filter: brightness(0) saturate(100%) invert(20%) sepia(66%)
+        saturate(2791%) hue-rotate(249deg) brightness(97%) contrast(94%);
+
+      &:nth-child(1) {
+        opacity: 0.2;
+      }
+
+      &:nth-child(2) {
+        opacity: 0.3;
+        filter: brightness(0) saturate(100%) invert(20%) sepia(66%)
+          saturate(2791%) hue-rotate(249deg) brightness(97%) contrast(94%)
+          blur(20px);
+      }
+    }
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.3;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

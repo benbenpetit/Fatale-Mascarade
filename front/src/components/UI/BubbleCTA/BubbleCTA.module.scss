@@ -1,0 +1,35 @@
+.container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-radius: 9999px;
+  background-color: #3c05a4;
+  cursor: pointer;
+
+  .icon {
+    flex-shrink: 0;
+    position: relative;
+    border-radius: 9999px;
+    overflow: hidden;
+    width: 9.25vmin;
+    height: 9.25vmin;
+
+    img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      aspect-ratio: 1 / 1;
+    }
+  }
+
+  .text {
+    display: inline-block;
+    font-size: clamp(0.675rem, 4vmin, 1rem);
+    font-weight: 700;
+    line-height: 1.25;
+    padding: 0 0.75em 0 0.35em;
+    color: var(--color-light-purple);
+  }
+}
