@@ -1,5 +1,4 @@
-Oééé projet de fin d'année jeu hybride cartes/téléphone
+Projet de fin d'année jeu hybride cartes/téléphone
 
-front classic react
-
-serveur node avec socket.io
+Front : React classique
+Serveur : Node puis Socket.IO
